@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/danielstephenson/Projects/skills-workshops/week-4/Bookmark-Managers/spec/booksmarks_spec.rb": [
+      "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/booksmarks_spec.rb": [
         1,
         null,
         1,
@@ -15,9 +15,7 @@
         null,
         null
       ],
-      "/Users/danielstephenson/Projects/skills-workshops/week-4/Bookmark-Managers/spec/features/booksmarks_view_spec.rb": [
-        null,
-        null,
+      "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/booksmarks_view_spec.rb": [
         1,
         1,
         1,
@@ -27,7 +25,7 @@
         null,
         null
       ],
-      "/Users/danielstephenson/Projects/skills-workshops/week-4/Bookmark-Managers/spec/features/greeting_spec.rb": [
+      "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/greeting_spec.rb": [
         1,
         1,
         1,
@@ -37,6 +35,6 @@
         null
       ]
     },
-    "timestamp": 1537807829
+    "timestamp": 1537874968
   }
 }
