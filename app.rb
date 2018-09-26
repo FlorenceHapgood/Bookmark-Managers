@@ -1,7 +1,11 @@
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/bookmark'
 
+
 class BookmarkManager < Sinatra::Base
+  enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     @bookmarks = Bookmark.all
@@ -13,11 +17,22 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/save_bookmarks' do
-    @address_to_be_added = params[:address]
-    connection = PG.connect(dbname: 'bookmark_manager_test') #we have to do this here because we are not calling on our bookmark class at all, so we don't know about the fake test yet.
-    connection.exec("INSERT INTO bookmarks(url) VALUES('#{@address_to_be_added}')")
-    redirect '/' # I'm not wanting to do get all on bookmakrs class. #I'm wanting to just interact with my test database
+    url = params[:address]
+    if url =~ /\A#{URI::regexp(['http', 'https'])}\z/
+      Bookmark.create(url)
+    else
+      flash[:error] = "That is not a real URL you fool"
+    end
+    redirect '/' # I'm not wanting to do get all on bookmarks class. #I'm wanting to just interact with my test database
   end
 
 
 end
+
+#
+
+#   p "please enter again"? will that be carried to the bookmarks?
+#
+#
+#
+# else url = params[:address]
