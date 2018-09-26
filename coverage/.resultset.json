@@ -17,7 +17,22 @@
         null,
         null
       ],
+      "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/add_bookmark_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
       "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/booksmarks_view_spec.rb": [
+        1,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -37,6 +52,6 @@
         null
       ]
     },
-    "timestamp": 1537892800
+    "timestamp": 1537952496
   }
 }
