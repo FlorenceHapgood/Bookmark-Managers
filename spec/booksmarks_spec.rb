@@ -12,8 +12,13 @@ describe Bookmark do
 
   describe "create" do
     it "stores a new bookmark" do
-      Bookmark.create("www.testbookmark.com") #didn't put in the url thing
-      expect(Bookmark.all).to include("www.testbookmark.com")
+      Bookmark.create("http://www.testbookmark.com") #didn't put in the url thing
+      expect(Bookmark.all).to include("http://www.testbookmark.com")
+    end
+
+    it "should return false if not real URL" do
+      expect(Bookmark.create("gobbledy-gook")).to equal false
     end
   end
+
 end

@@ -18,14 +18,10 @@ class BookmarkManager < Sinatra::Base
 
   post '/save_bookmarks' do
     url = params[:address]
-    if url =~ /\A#{URI::regexp(['http', 'https'])}\z/
-      Bookmark.create(url)
-    else
-      flash[:error] = "That is not a real URL you fool"
-    end
+    string = "That is not a real URL you fool"
+    flash[:error] = string unless Bookmark.create(url)
     redirect '/' # I'm not wanting to do get all on bookmarks class. #I'm wanting to just interact with my test database
   end
-
 
 end
 
