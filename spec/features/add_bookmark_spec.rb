@@ -11,10 +11,9 @@ feature 'Add bookmark page' do
     visit '/'
     click_button 'add'
     fill_in :address, with: "gobbledy-gook"
+    fill_in :title, with: 'gobbledy-gook'
     click_button 'add'
     expect(page).not_to have_content "gobbledy-gook"
     expect(page).to have_content "That is not a real URL you fool"
-
   end
-
 end

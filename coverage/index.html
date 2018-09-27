@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-27T14:07:53+01:00">2018-09-27T14:07:53+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-27T15:20:55+01:00">2018-09-27T15:20:55+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>35</b> relevant lines. 
-    <span class="green"><b>35</b> lines covered</span> and
+    <b>36</b> relevant lines. 
+    <span class="green"><b>36</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#7138a83ff351aa955cf50172dbc503e94dae75dd" class="src_link" title="spec/features/add_bookmark_spec.rb">spec/features/add_bookmark_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>20</td>
-        <td>14</td>
-        <td>14</td>
+        <td>19</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -101,8 +101,8 @@
     <h3>spec/features/add_bookmark_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -191,25 +191,25 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_button &#39;add&#39;</code>
+          <code class="ruby">    fill_in :title, with: &#39;gobbledy-gook&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).not_to have_content &quot;gobbledy-gook&quot;</code>
+          <code class="ruby">    click_button &#39;add&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content &quot;That is not a real URL you fool&quot;</code>
+          <code class="ruby">    expect(page).not_to have_content &quot;gobbledy-gook&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    expect(page).to have_content &quot;That is not a real URL you fool&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -219,12 +219,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
@@ -282,7 +276,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">      Bookmark.create(&quot;http://www.makersacademy.com&quot;)</code>
+          <code class="ruby">      Bookmark.create(&quot;http://www.makersacademy.com&quot;, &#39;Makers&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -415,7 +409,7 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(bookmarks).to include(&quot;http://www.makersacademy.com&quot;)</code>
+          <code class="ruby">      expect(bookmarks[0][:url]).to eq(&quot;http://www.makersacademy.com&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -451,13 +445,13 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      Bookmark.create(&quot;http://www.testbookmark.com&quot;) #didn&#39;t put in the url thing</code>
+          <code class="ruby">      Bookmark.create(&quot;http://www.testbookmark.com&quot;, &#39;TestBookmark&#39;) #didn&#39;t put in the url thing</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Bookmark.all).to include(&quot;http://www.testbookmark.com&quot;)</code>
+          <code class="ruby">      expect(Bookmark.all).to include({ url: &quot;http://www.testbookmark.com&quot;, title: &quot;TestBookmark&quot; })</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -481,7 +475,7 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Bookmark.create(&quot;gobbledy-gook&quot;)).to equal false</code>
+          <code class="ruby">      expect(Bookmark.create(&quot;gobbledy-gook&quot;, &#39;gobbledy-gook&#39;)).to equal false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">

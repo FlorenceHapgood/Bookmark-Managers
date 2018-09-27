@@ -22,17 +22,10 @@ class BookmarkManager < Sinatra::Base
 
   post '/save_bookmarks' do
     url = params[:address]
+    title = params[:title]
     string = "That is not a real URL you fool"
-    flash[:error] = string unless Bookmark.create(url)
+    flash[:error] = string unless Bookmark.create(url, title)
     redirect '/' # I'm not wanting to do get all on bookmarks class. #I'm wanting to just interact with my test database
   end
 
 end
-
-#
-
-#   p "please enter again"? will that be carried to the bookmarks?
-#
-#
-#
-# else url = params[:address]
