@@ -4,16 +4,21 @@
   </div>
 <% end %>
 
+
 <ol>
   <% @bookmarks.each do |bookmark| %>
-  <li>
-    <a href=" <%= bookmark %>">
-      <%= bookmark %>
+  <div class = "bookmark" >
+    <a href=" <%= bookmark[:url] %>">
+      <%= bookmark[:title] %>
     </a>
-  </li>
+    <form action="/bookmarks/<%=bookmark[:cocopops]%>" method ="post">
+      <input type = "hidden" name="_method" value="DELETE"/>
+      <input type="submit" value="Delete"/>
+    </form>
+  </div>
   <% end %>
 </ol>
 
-<form action="/add_bookmark" get="post">
+<form action="/bookmarks/new" method = "get">
   <input type="submit" value="add">
 </form>

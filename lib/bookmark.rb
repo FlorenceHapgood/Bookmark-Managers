@@ -9,7 +9,7 @@ class Bookmark
     end
 
     result = connection.exec("SELECT * FROM bookmarks")
-    result.map { |hash| { url: hash["url"], title: hash["title"] } }
+    result.map { |hash| { cocopops: hash["id"], url: hash["url"], title: hash["title"] } }
   end
 
   def self.create(url, title)
@@ -32,3 +32,14 @@ class Bookmark
 
 
 end
+
+#
+# def self.delete(id)
+#   if ENV['ENVIRONMENT'] == 'test'
+#     connection = PG.connect(dbname: 'bookmark_manager_test')
+#   else
+#     connection = PG.connect(dbname: 'bookmark_manager')
+#   end
+#
+#   connection.exec("")
+# end

@@ -12,12 +12,21 @@ describe Bookmark do
 
   describe "create" do
     it "stores a new bookmark" do
-      Bookmark.create("http://www.testbookmark.com", 'TestBookmark') #didn't put in the url thing
-      expect(Bookmark.all).to include({ url: "http://www.testbookmark.com", title: "TestBookmark" })
+      Bookmark.create("http://www.testbookmark.com", 'TestBookmark')
+      expect(Bookmark.all).to include({ cocopops: '1', url: "http://www.testbookmark.com", title: "TestBookmark" })
     end
 
     it "should return false if not real URL" do
       expect(Bookmark.create("gobbledy-gook", 'gobbledy-gook')).to equal false
+    end
+  end
+
+
+  describe "delete" do
+    it "deletes a bookmark" do
+      Bookmark.create("http://www.testbookmark.com", 'TestBookmark')
+      Bookmark.delete(1)
+      expect(Bookmark.all).to eq([])
     end
   end
 

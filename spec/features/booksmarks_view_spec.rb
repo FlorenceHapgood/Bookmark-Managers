@@ -5,7 +5,7 @@ require "./app"
     scenario "A user can see the bookmarks" do
       Bookmark.create("http://www.makersacademy.com", 'Makers')
       visit "/"
-      expect(page).to have_content('http://www.makersacademy.com')
+      expect(page).to have_content('Makers')
     end
   end
 

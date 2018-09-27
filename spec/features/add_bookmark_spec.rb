@@ -3,8 +3,9 @@ feature 'Add bookmark page' do
     visit('/')
     click_button("add")
     fill_in :address, with: "https://www.google.com/"
+    fill_in :title, with: "Google"
     click_button("add")
-    expect(page).to have_content "https://www.google.com/"
+    expect(page).to have_content "Google"
   end
 
   scenario "warns user if bookmark not real URL" do
