@@ -8,7 +8,7 @@ require 'pry'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'setup_test_database.rb'
+require 'helper_methods.rb'
 
 Capybara.app = BookmarkManager
 
