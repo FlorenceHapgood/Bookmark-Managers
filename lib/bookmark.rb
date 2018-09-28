@@ -16,6 +16,7 @@ class Bookmark
   end
 
   def self.update(id, address, title)
+    return false unless is_url?(address)
     DatabaseConnection.query("UPDATE bookmarks SET url='#{address}', title='#{title}' WHERE id = #{id};")
   end
 

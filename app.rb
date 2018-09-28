@@ -42,7 +42,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   patch '/bookmarks/:id' do
-    Bookmark.update(params[:id], params[:address], params[:title])
+    string = "That is not a real URL you FOOL"
+    flash[:error] = string if Bookmark.update(params[:id], params[:address], params[:title]) == false
     redirect '/bookmarks'
   end
 
