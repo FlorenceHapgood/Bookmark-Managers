@@ -28,7 +28,7 @@ class BookmarkManager < Sinatra::Base
     title = params[:title]
     string = "That is not a real URL you fool"
     flash[:error] = string unless Bookmark.create(url, title)
-    redirect '/' # I'm not wanting to do get all on bookmarks class. #I'm wanting to just interact with my test database
+    redirect '/' # I'm not wanting to get all of bookmarks class. #I'm wanting to just interact with my test database
   end
 
   delete "/bookmarks/:id" do
@@ -45,6 +45,17 @@ class BookmarkManager < Sinatra::Base
     string = "That is not a real URL you FOOL"
     flash[:error] = string if Bookmark.update(params[:id], params[:address], params[:title]) == false
     redirect '/bookmarks'
+  end
+
+  get '/bookmarks/:id/comments/new' do
+    @bookmark_id = params[:id]
+    erb :"comments/new"
+  end
+
+  post '/bookmarks/:id/comments/new' do
+    p params
+    Bookmark.add_comment(params[:id], params[:comment])
+    redirect '/'
   end
 
 end

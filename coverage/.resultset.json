@@ -23,6 +23,22 @@
         null,
         null
       ],
+      "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/adding_and_viewing_comments_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/features/booksmarks_view_spec.rb": [
         1,
         1,
@@ -112,6 +128,14 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/florencehapgood/Desktop/Projects/Bookmark-Managers/spec/units/database_connection_spec.rb": [
@@ -122,13 +146,13 @@
         1,
         1,
         1,
-        null,
         1,
         null,
         null,
         1,
         1,
         1,
+        null,
         null,
         null,
         null,
@@ -144,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1538125487
+    "timestamp": 1538148384
   }
 }

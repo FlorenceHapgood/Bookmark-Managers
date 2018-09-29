@@ -13,7 +13,7 @@ describe Bookmark do
   describe "create" do
     it "stores a new bookmark" do
       Bookmark.create("http://www.testbookmark.com", 'TestBookmark')
-      expect(Bookmark.all).to include({ cocopops: '1', url: "http://www.testbookmark.com", title: "TestBookmark" })
+      expect(Bookmark.all).to include({ id: '1', url: "http://www.testbookmark.com", title: "TestBookmark" })
     end
 
     it "should return false if not real URL" do
@@ -29,5 +29,13 @@ describe Bookmark do
       expect(Bookmark.all).to eq([])
     end
   end
+
+ describe "add_comment" do
+   it "adds a comment" do
+     Bookmark.create("http://www.testbookmark.com", "Test")
+     Bookmark.add_comment(1, "comment")
+     expect(Bookmark.get_comments(1)[0].values).to include("comment")
+   end
+ end
 
 end

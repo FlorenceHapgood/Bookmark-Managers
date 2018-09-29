@@ -10,13 +10,22 @@
   <div class = "bookmark" >
     <a href=" <%= bookmark[:url] %>">
       <%= bookmark[:title] %>
+    </a><br>
+    <a>Comments:
+    <% Bookmark.get_comments(bookmark[:id]).each do |hash| %>
+    <br>
+      <%= hash['text'] %>
+    <% end %>
     </a>
-    <form action="/bookmarks/<%=bookmark[:cocopops]%>" method ="post">
+    <form action="/bookmarks/<%=bookmark[:id]%>" method ="post">
       <input type = "hidden" name="_method" value="DELETE"/>
       <input type="submit" value="Delete"/>
     </form>
-    <form action="/bookmarks/<%=bookmark[:cocopops]%>/edit" method ="get">
+    <form action="/bookmarks/<%=bookmark[:id]%>/edit" method ="get">
       <input type="submit" value="Update"/>
+    </form>
+    <form action="/bookmarks/<%=bookmark[:id]%>/comments/new" method ="get">
+      <input type="submit" value="Add Comment"/>
     </form>
   </div>
   <% end %>
